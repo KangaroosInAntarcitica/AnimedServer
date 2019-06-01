@@ -1,8 +1,8 @@
 {
   "database": "animed",
-  "username": "admin",
+  "username": "animeshnik",
   "host": "localhost",
-  "port": "",
+  "port": "3306",
   "password": "",
   "dialect": "mysql",
   "operatorsAliases": false

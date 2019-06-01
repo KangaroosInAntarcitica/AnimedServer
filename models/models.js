@@ -1,16 +1,18 @@
 const Sequelize = require('sequelize');
 
 const connection = require('./connection.json');
-const DISABLE_SEQUELIZE_DEFAULTS = {
-    timestamps: false,
-    freezeTableName: true,
-};
+// const DISABLE_SEQUELIZE_DEFAULTS = {
+//     timestamps: false,
+//     freezeTableName: true,
+// };
 
 const sequelize = new Sequelize(connection);
 
-User = require("./user");
-AccessToken = require("./accessToken");
+User = require("./user")(sequelize, Sequelize);
+AccessToken = require("./accessToken")(sequelize, Sequelize);
 
 User.hasMany(AccessToken, {foreignKey: "userID"});
 
-module.exports = { sequelize, Sequelize };
+sequelize.sync();
+
+module.exports = {User, AccessToken};
