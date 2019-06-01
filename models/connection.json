@@ -1,0 +1,9 @@
+{
+  "database": "animed",
+  "username": "admin",
+  "host": "localhost",
+  "port": "",
+  "password": "",
+  "dialect": "mysql",
+  "operatorsAliases": false
+}
