@@ -1,3 +1,2 @@
 const Sequelize = require('sequelize');
 
-
