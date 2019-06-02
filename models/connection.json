@@ -3,7 +3,7 @@
   "username": "animeshnik",
   "host": "localhost",
   "port": "3306",
-  "password": "",
+  "password": "parol",
   "dialect": "mysql",
   "operatorsAliases": false
 }

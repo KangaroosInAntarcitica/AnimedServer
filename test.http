@@ -1,0 +1,21 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/x-www-form-urlencoded
+
+username=hello&password=1234
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+client_id=null&client_secret=null&grant_type=password&username=hello&password=1234
+
+###
+
+GET http://localhost:3000/auth/restirctedArea
+Authorization: Bearer 1ac41f511f608b4ba2ae9affacbc448c67fcf533
+
+###
+
+
+

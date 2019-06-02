@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 
 const connection = require('./connection.json');
-// const DISABLE_SEQUELIZE_DEFAULTS = {
-//     timestamps: false,
-//     freezeTableName: true,
-// };
+const DISABLE_SEQUELIZE_DEFAULTS = {
+    timestamps: false,
+    freezeTableName: true,
+};
 
 const sequelize = new Sequelize(connection);
 

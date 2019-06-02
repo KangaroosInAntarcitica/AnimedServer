@@ -6,28 +6,33 @@ const userDb = {};
 const tokenDb = {};
 let id = 0;
 
+const {User, AccessToken} = require("./models");
 
 const dbModel = {
     saveAccessToken: (accessToken, userID, expires, callback) => {
-        tokenDb[accessToken] = {userID, expires};
-        callback();
+        expires = expires.getTime();
+        AccessToken.create({userID, token: accessToken, expires})
+            .then(() => callback());
     },
 
     getUserIDFromBearerToken: (accessToken, callback) => {
-        callback(tokenDb[accessToken].userID);
+        AccessToken.findOne({where: {token: accessToken}})
+            .then(token => console.log(token) || callback(token.userID));
     },
 
     registerUserInDB: (username, password, callback) => {
-        userDb[username] = {username, password, id: ++id};
-        callback();
+        User.create({username, password})
+            .then((user) => callback());
     },
 
     getUserFromCrentials: (username, password, callback) => {
-        callback(false, userDb[username] && userDb[username].password === password ? {...userDb[username]} : null);
+        User.findOne({where: {username, password}})
+            .then(user => console.log(user) || callback(false, user));
     },
 
     doesUserExist: (username, callback) => {
-        callback(false, !!userDb[username]);
+        User.findOne({where: {username}})
+            .then((user) => (user) || callback(false, !!user));
     }
 };
 
@@ -48,6 +53,7 @@ const accessTokenModel = {
     },
 
     getUser: (username, password, callback) => {
+        console.log("get-user")
         dbModel.getUserFromCrentials(username, password, callback);
     },
 
@@ -56,6 +62,8 @@ const accessTokenModel = {
     },
 
     getAccessToken: (bearerToken, callback) => {
+        console.log("get-access-token")
+
         dbModel.getUserIDFromBearerToken(bearerToken, (userID) => {
             const accessToken = {
                 user: {
