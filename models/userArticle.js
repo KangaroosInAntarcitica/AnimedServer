@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('userCourse', {
+    return sequelize.define('userArticle', {
         userId: {
             type: type.INTEGER,
             allowNull: false
