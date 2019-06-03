@@ -18,7 +18,7 @@ const userController = {
 
     addUser: async (username, password, name) => {
         try {
-            return await User.create({username, password, name})
+            return (await User.create({username, password, name})).toJSON();
         } catch (e) {
             return null;
         }

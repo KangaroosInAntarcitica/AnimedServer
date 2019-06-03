@@ -6,6 +6,7 @@ const createUserRouter = (express, controllers, oauth, bodyParser) => {
 
     userRouter.post("/register", async (req, res) => {
         const body = req.body;
+
         if (await userController.userExists(body.username)) {
             res.status(400).json({'error': "User exists"});
             return;

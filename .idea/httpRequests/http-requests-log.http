@@ -1,0 +1,36 @@
+POST http://localhost:3000/user/register
+Content-Type: application/x-www-form-urlencoded
+
+username=hello&password=1234
+
+<> 2019-06-03T074657.400.json
+
+###
+
+POST http://localhost:3000/user/register
+Content-Type: application/x-www-form-urlencoded
+
+username=hello&password=1234
+
+<> 2019-06-03T074249.400.json
+
+###
+
+POST http://localhost:3000/user/register
+Content-Type: application/x-www-form-urlencoded
+
+username=hello&password=1234
+
+<> 2019-06-03T074127.400.json
+
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/x-www-form-urlencoded
+
+username=hello&password=1234
+
+<> 2019-06-03T074103.404.html
+
+###
+

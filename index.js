@@ -15,6 +15,11 @@ const oauth2 = oAuth2Server({
     debug: true
 });
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    next();
+});
+
 const userRouter = require("./RESTService/user")(express, controllers, oauth2, bodyParser);
 app.use("/user", userRouter);
 
