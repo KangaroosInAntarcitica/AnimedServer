@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize');
 const connection = require('./connection.json');
 
-const sequelize = new Sequelize(`mysql://s1vhyz3ra7xqsqlp:h66dgp4fv98x723q@ui0tj7jn8pyv9lp6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lqa0mkv7r1j1ln3h`);
+
+
+const sequelize = new Sequelize(process.env.JAWSDB_MARIA_URL || connection);
 
 const User = require("./user")(sequelize, Sequelize);
 const AccessToken = require("./accessToken")(sequelize, Sequelize);
