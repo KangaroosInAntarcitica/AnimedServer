@@ -4,9 +4,7 @@ const connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 
 connection.connect();
 connection.query(`CREATE DATEBASE animed;`, (err,row, field) => {
-    if (err){
-        throw  err;
-    }
+    console.log(err);
 });
 
 module.exports = true;
