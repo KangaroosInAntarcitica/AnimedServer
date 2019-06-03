@@ -24,6 +24,9 @@ app.use("/article", articleRouter);
 const courseRouter = require("./RESTService/course")(express, controllers, oauth2, bodyParser);
 app.use("/course", courseRouter);
 
+const listRouter = require("./RESTService/list")(express, controllers, oauth2, bodyParser);
+app.use("/list", listRouter);
+
 const debugRouter = express.Router();
 debugRouter.get("/", (req, res) => {
     res.status(200).json({users: userDb, tokens: tokenDb});

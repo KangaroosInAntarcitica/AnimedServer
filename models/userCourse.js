@@ -17,6 +17,11 @@ module.exports = (sequelize, type) => {
         },
         comment: {
             type: type.STRING
+        },
+        isAuthor: {
+            type: type.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     }, {
         timestamps: false,

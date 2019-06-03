@@ -20,6 +20,11 @@ module.exports = (sequelize, type) => {
         },
         completed: {
             type: type.BOOLEAN
+        },
+        isAuthor: {
+            type: type.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     }, {
         timestamps: false,
