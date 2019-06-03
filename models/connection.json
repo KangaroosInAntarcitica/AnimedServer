@@ -1,9 +1,9 @@
 {
   "database": "animed",
-  "username": "animeshnik",
-  "host": "localhost",
+  "username": "s1vhyz3ra7xqsqlp",
+  "host": "ui0tj7jn8pyv9lp6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   "port": "3306",
-  "password": "parol",
+  "password": "h66dgp4fv98x723q",
   "dialect": "mysql",
   "operatorsAliases": false
 }
