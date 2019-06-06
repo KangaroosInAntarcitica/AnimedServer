@@ -41,7 +41,7 @@ app.use("/list", listRouter);
 const redirectRouter = require("./RESTService/redirect")(express);
 app.use("/", redirectRouter);
 
-app.get("/animed", (req, res) => {
+app.get(/\/animed.*/, (req, res) => {
     res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
